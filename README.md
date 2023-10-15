@@ -7,7 +7,9 @@ This is a Telegram bot built using the Telebot library for Python. Its main func
 1. Ensure you have Python installed on your system.
 2. Install the required libraries:
 
-
+    ```bash
+    pip install pyTelegramBotAPI
+    ```
 
 ## Setup
 1. Create a new bot on Telegram using the BotFather and obtain your TOKEN.
@@ -27,7 +29,10 @@ This is a Telegram bot built using the Telebot library for Python. Its main func
 ## Running the Bot
 To run the bot, navigate to the directory containing the script and execute:
 
+    ```bash
+    python main.py
+    ```
+
 Replace `main.py` with the name of your script.
 
-Note: Ensure you have the appropriate permissions to access and manage the specified channel and chat for the bot to function correctly.
-
+> **Note:** Ensure you have the appropriate permissions to access and manage the specified channel and chat for the bot to function correctly.
