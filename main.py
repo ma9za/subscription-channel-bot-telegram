@@ -20,11 +20,11 @@ def handle_all_messages(message):
         bot.delete_message(message.chat.id, message.message_id)
 
         markup = types.InlineKeyboardMarkup()
-        join_btn = types.InlineKeyboardButton("انضمام بالقناة", url="https://t.me/" + CHANNEL_ID.replace("@", ""))
-        check_btn = types.InlineKeyboardButton("تحقق من الانضمام", callback_data="check_subscription")
+        join_btn = types.InlineKeyboardButton("Join the channel", url="https://t.me/" + CHANNEL_ID.replace("@", ""))
+        check_btn = types.InlineKeyboardButton("Check to join ✅", callback_data="check_subscription")
         markup.add(join_btn, check_btn)
 
-        sent_message = bot.send_message(message.chat.id, f"{user_mention}، لايمكنك الدردشة هنا لعدم انضمامك في القناة الرئيسية. اشترك وعد الى هنا للاشتراك.", reply_markup=markup, parse_mode="Markdown")
+        sent_message = bot.send_message(message.chat.id, f"{user_mention} You cannot chat here for not joining the main channel. Subscribe and back here to subscribe.", reply_markup=markup, parse_mode="Markdown")
         auto_delete_message(sent_message.chat.id, sent_message.message_id)
 
 @bot.callback_query_handler(func=lambda call: call.data == "check_subscription")
@@ -36,6 +36,6 @@ def check_subscription(call):
         bot.restrict_chat_member(call.message.chat.id, user_id, can_send_messages=True, can_send_media_messages=True, can_send_polls=True, can_send_other_messages=True, can_add_web_page_previews=True)
         bot.delete_message(call.message.chat.id, call.message.message_id)
     else:
-        bot.answer_callback_query(call.id, "اشترك بالقناة ثم عد للدردشة", show_alert=True)
+        bot.answer_callback_query(call.id, "Subscribe to the channel and then come back to chat", show_alert=True)
 
 bot.polling()
