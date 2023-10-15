@@ -29,9 +29,9 @@ This is a Telegram bot built using the Telebot library for Python. Its main func
 ## Running the Bot
 To run the bot, navigate to the directory containing the script and execute:
 
-    ```
+    
     python main.py
-    ```
+    
 
 Replace `main.py` with the name of your script.
 
