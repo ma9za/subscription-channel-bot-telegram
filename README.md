@@ -29,7 +29,7 @@ This is a Telegram bot built using the Telebot library for Python. Its main func
 ## Running the Bot
 To run the bot, navigate to the directory containing the script and execute:
 
-    ```bash
+    ```
     python main.py
     ```
 
